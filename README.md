@@ -1,14 +1,20 @@
-# JARWIS (J.A.R.V.I.S.)
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="JARWIS - Holographic AI Assistant" width="100%" />
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Author](https://img.shields.io/badge/Author-Viswa%20AG-orange.svg)](https://github.com/viswafc)
-[![Node](https://img.shields.io/badge/Node-%3E%3D20-green.svg)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
-[![Three.js](https://img.shields.io/badge/Three.js-WebGL-black.svg)](https://threejs.org/)
-[![WebGPU](https://img.shields.io/badge/WebGPU-Enabled-purple.svg)](https://www.w3.org/TR/webgpu/)
+<p align="center">
+  <a href="https://github.com/viswafc/JARWIS_OPEN/actions/workflows/ci.yml"><img src="https://github.com/viswafc/JARWIS_OPEN/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="https://github.com/viswafc/JARWIS_OPEN/releases"><img src="https://img.shields.io/github/v/release/viswafc/JARWIS_OPEN?color=blue&label=Release" alt="Release" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
+  <a href="https://github.com/viswafc"><img src="https://img.shields.io/badge/Author-Viswa%20AG-orange.svg" alt="Author" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node-%3E%3D20-green.svg" alt="Node" /></a>
+  <a href="https://www.w3.org/TR/webgpu/"><img src="https://img.shields.io/badge/WebGPU-Enabled-purple.svg" alt="WebGPU" /></a>
+</p>
 
-> **Just A Rather Very Intelligent System** — An open-source autonomous holographic AI assistant created by **Viswa AG**. Featuring a procedural 3D Arc Reactor interface, 100% local neural voice synthesis, wake-word activation, real-time hand gesture tracking, and complete system execution.
+<p align="center">
+  <strong>Just A Rather Very Intelligent System</strong> — An open-source autonomous holographic AI assistant created by <strong>Viswa AG</strong>.<br/>
+  Featuring a procedural 3D Arc Reactor interface, 100% local neural voice synthesis, wake-word activation, real-time hand gesture tracking, and complete system execution.
+</p>
 
 ---
 
