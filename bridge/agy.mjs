@@ -2,10 +2,22 @@ import { spawn } from 'node:child_process'
 import readline from 'node:readline'
 import process from 'node:process'
 import { existsSync } from 'node:fs'
+import { join } from 'node:path'
+import { homedir } from 'node:os'
 
-const AGY_EXE =
-  process.env.ANTIGRAVITY_AGENTAPI_EXE ||
-  'C:\\Users\\freak\\.gemini\\bin\\agy.exe'
+function resolveAgyPath() {
+  if (process.env.ANTIGRAVITY_AGENTAPI_EXE) return process.env.ANTIGRAVITY_AGENTAPI_EXE
+  const candidate = join(
+    homedir(),
+    '.gemini',
+    'bin',
+    process.platform === 'win32' ? 'agy.exe' : 'agy',
+  )
+  if (existsSync(candidate)) return candidate
+  return 'agy'
+}
+
+const AGY_EXE = resolveAgyPath()
 
 const AGY_MODEL = process.env.JARVIS_MODEL || 'gemini-3.8-flash-medium'
 
@@ -113,7 +125,7 @@ export function createAgySession({ sendTurn, send, announceTool }) {
         }
 
         const child = spawn(AGY_EXE, args, {
-          cwd: 'D:\\JARWIS',
+          cwd: process.cwd(),
           env: process.env,
         })
         activeChild = child
@@ -201,9 +213,12 @@ export function createAgySession({ sendTurn, send, announceTool }) {
 
         child.on('error', (err) => {
           console.error('[jarvis-agy spawn error]', err)
+          const isNotFound = err.code === 'ENOENT'
           sendTurn({
             type: 'error',
-            message: 'Antigravity core connection error.',
+            message: isNotFound
+              ? 'Antigravity CLI (agy) was not found. Please install Antigravity or add agy to your PATH.'
+              : 'Antigravity core connection error.',
             ask: askId,
           })
           finishTurn()

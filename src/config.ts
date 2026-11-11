@@ -111,7 +111,7 @@ export const TTS_ENGINE: 'kokoro' | 'system' = choice(
   'VITE_TTS_ENGINE',
   import.meta.env.VITE_TTS_ENGINE,
   ['kokoro', 'system'] as const,
-  'system',
+  'kokoro',
 )
 
 /**

@@ -18,6 +18,12 @@ if (existsSync('.env.local')) {
   try { process.loadEnvFile('.env.local') } catch {}
 } else if (existsSync('.env')) {
   try { process.loadEnvFile('.env') } catch {}
+} else if (existsSync('.env.example')) {
+  try {
+    cpSync('.env.example', '.env.local')
+    process.loadEnvFile('.env.local')
+    console.log('  created .env.local from .env.example')
+  } catch {}
 }
 
 /**
